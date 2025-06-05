@@ -1,4 +1,5 @@
 from player import Player
+import random
 
 def main():
     # Initialize a player
@@ -18,6 +19,9 @@ def main():
     print(f"Player's Name: {player_1.name}")
     print(f"Player's Role: {player_1.role}")
     print(f"Is Player alive?: {player_1.alive}")
+
+    #Generate a random number
+    
           
 
 if __name__ == "__main__":
