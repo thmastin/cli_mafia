@@ -5,10 +5,9 @@ class Player:
         self.name = name
         self.role = role
         self.alive = alive
-        self.assign_role()
     
     def assign_role(self):
         if random.random() < 0.5:
-            self.role = "Mafia"
+            self.role = "mafia"
         else:
-            self.role = "Townsfolk"
+            self.role = "townsfolk"
