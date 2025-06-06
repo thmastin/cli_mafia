@@ -13,9 +13,8 @@ def game_setup():
     townsfolk = 0
     for i in range(number_of_players):
         if mafia < 2:
-            new_player = (Player(f"Player {i + 1}", "townsfolk"))
+            new_player = (Player(f"Player {i + 1}", "mafia"))
             players.append(new_player)
-            players[i].role = "mafia"
             mafia += 1
         else:
             new_player = Player(f"Player {i + 1}", "townsfolk")
