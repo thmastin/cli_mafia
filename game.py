@@ -18,7 +18,4 @@ def game_setup():
             players.append(Player(f"Player {i + 1}", "townsfolk"))
             townsfolk += 1
 
-        print(mafia)
-        print(townsfolk)
-        print(players[i].name)
-        print(players[i].role)
+     

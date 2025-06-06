@@ -18,5 +18,9 @@ class TestGame(unittest.TestCase):
         self.assertEqual(mafia_count, 2)
         self.assertEqual(townsfolk_count, 6)
 
+    def test_player_names(self):
+        for i in range(len(players)):
+            self.assertEqual(players[i].name, f"Player {i + 1}")
+
 if __name__ == '__main__':
     unittest.main()
