@@ -23,7 +23,11 @@ class TestGame(unittest.TestCase):
             self.assertEqual(players[i].name, f"Player {i + 1}")
 
     def test_players_alive_initial(self):
-        self.assertEqual(len(players_alive), 8) 
+        self.assertEqual(len(players_alive), 8)
+
+    def test_players_equality(self):
+        for i in range(len(players)):
+            self.assertEqual(players[i], players_alive[i]) 
         
 
 if __name__ == '__main__':
