@@ -11,9 +11,9 @@ class TestGame(unittest.TestCase):
         mafia_count = 0
         townsfolk_count = 0
         for i in range(len(players)):
-            if players[i].role == "mafia":
+            if players[i].role == Role.MAFIA:
                 mafia_count += 1
-            if players[i].role == "townsfolk":
+            if players[i].role == Role.TOWN:
                 townsfolk_count += 1
         self.assertEqual(mafia_count, 2)
         self.assertEqual(townsfolk_count, 6)

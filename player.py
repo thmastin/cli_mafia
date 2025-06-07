@@ -15,5 +15,6 @@ class Player:
     def assign_role(self):
         if random.random() < 0.5:
             self.role = Role.MAFIA
+            print(self.role)
         else:
             self.role = Role.TOWN

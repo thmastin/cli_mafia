@@ -1,4 +1,7 @@
-from player import Player
+import random
+
+from player import *
+from voting import day_vote, night_vote
 
 phase = "night"
 players = []
@@ -12,11 +15,11 @@ def game_setup():
     townsfolk = 0
     for i in range(number_of_players):
         if mafia < 2:
-            new_player = (Player(f"Player {i + 1}", "mafia"))
+            new_player = (Player(f"Player {i + 1}", Role.MAFIA))
             players.append(new_player)
             mafia += 1
         else:
-            new_player = Player(f"Player {i + 1}", "townsfolk")
+            new_player = Player(f"Player {i + 1}", Role.TOWN)
             players.append(new_player)
             townsfolk += 1
 
@@ -30,6 +33,7 @@ def game_cycle():
     townsfolk = 0
     game_over = False
     game_phase = "night"
+    votes = {}
 
     for i in range(len(players)):
         if players[i].role == "mafia":
@@ -46,10 +50,11 @@ def game_cycle():
                 print("It is night")
                 townsfolk -= 1
                 game_phase = "day"
+                night_vote(players_alive)
             if game_phase == "day":
                 print("It is day")
                 game_phase = "night"
-                townsfolk -= 1
+                day_vote(players_alive)                    
         else:
             print("Game Over")
             print(f"Mafia remaining: {mafia}")
