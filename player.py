@@ -1,5 +1,11 @@
 import random
 
+from enum import Enum
+
+class Role(Enum):
+    MAFIA = "mafia"
+    TOWN = "townsfolk"
+
 class Player:
     def __init__(self, name, role, alive=True):
         self.name = name
@@ -8,6 +14,6 @@ class Player:
     
     def assign_role(self):
         if random.random() < 0.5:
-            self.role = "mafia"
+            self.role = Role.MAFIA
         else:
-            self.role = "townsfolk"
+            self.role = Role.TOWN
