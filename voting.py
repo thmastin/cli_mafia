@@ -21,13 +21,25 @@ def mafia_vote(voter, voter_list):
     return ai_vote(voter_list, voter, Role.MAFIA)
 
 def day_vote(voter_list):
+    votes = {}
     for voter in voter_list:
         if voter.role == Role.TOWN:
             vote = town_vote(voter, voter_list)
+            if vote.name in votes:
+                votes[vote.name] = votes[vote.name] + 1
+            else:
+                votes[vote.name] = 1
             print(f"{voter.name} votes for {vote.name}")
         else:
             vote = mafia_vote(voter, voter_list)
+            if vote.name in votes:
+                votes[vote.name] = votes[vote.name] + 1
+            else:
+                votes[vote.name] = 1
+ 
             print(f"{voter.name} votes for {vote.name}")
+        print(f"Total votes: {votes}")
+
 
 def night_vote(voter_list):
     for voter in voter_list:
