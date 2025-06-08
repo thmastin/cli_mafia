@@ -34,7 +34,6 @@ def game_setup():
 def game_cycle():
     mafia = 0
     townsfolk = 0
-    game_over = False
     game_phase = "night"
     night_count = 1
     day_count = 1
@@ -46,24 +45,22 @@ def game_cycle():
         else:
             townsfolk += 1
     
-    while game_over is False:
-        if win_check(mafia, townsfolk) is False:
-            if game_phase == "night":
-                print(f"Night {night_count}:")
-                townsfolk -= 1
-                game_phase = "day"
-                night_vote(players_alive)
-                night_count += 1
-            if game_phase == "day":
-                print(f"Day {day_count}:")
-                game_phase = "night"
-                day_vote(players_alive)
-                day_count += 1                    
-        else:
-            print("Game Over")
-            print(f"{determine_winner(mafia)} have won the game!")
-            game_over = True
-            return
+    while win_check(mafia, townsfolk) is False:
+        if game_phase == "night":
+            print(f"Night {night_count}:")
+            townsfolk -= 1
+            game_phase = "day"
+            night_vote(players_alive)
+            night_count += 1
+        if game_phase == "day":
+            print(f"Day {day_count}:")
+            game_phase = "night"
+            day_vote(players_alive)
+            day_count += 1                    
+    else:
+        print("Game Over")
+        print(f"{determine_winner(mafia)} have won the game!")
+        return
 
 def win_check(mafia, townsfolk):
     if townsfolk >0 and mafia <= len(players_alive):
