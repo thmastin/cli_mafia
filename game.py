@@ -9,34 +9,37 @@ players_alive = []
 number_of_players = 8
 
 def game_setup():
+    # Make sure lists are empty
+    players.clear()
+    players.clear()
     
-    # Initialize players and assign roles
-    mafia = 0
-    townsfolk = 0
+    # Determine the number of mafia (1/4 of players minimum 1)
+    num_mafia = max(1, number_of_players // 4)
+    
+    # Create role list with num_mafia MAFIA and remaining TOWN
+    roles = [Role.MAFIA] * num_mafia + [Role.TOWN] * (number_of_players - num_mafia)
+    random.shuffle(roles)
+
+    #Assign roles to players
     for i in range(number_of_players):
-        if mafia < 2:
-            new_player = (Player(f"Player {i + 1}", Role.MAFIA))
-            players.append(new_player)
-            mafia += 1
-        else:
-            new_player = Player(f"Player {i + 1}", Role.TOWN)
-            players.append(new_player)
-            townsfolk += 1
+        new_player = Player(f"Player {i + 1}", roles[i])
+        players.append(new_player)
+        players_alive.append(new_player)
 
-    # Add starting players to alive
-    for i in range(len(players)):
-        alive_player = players[i]
-        players_alive.append(alive_player)
-
+    #Debug: Print roles to verify
+    for player in players:
+        print(f"{player.name}: {player.role.value}")
+        print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
+    
 def game_cycle():
     mafia = 0
     townsfolk = 0
     game_over = False
     game_phase = "night"
-    votes = {}
+    win = ""
 
     for i in range(len(players)):
-        if players[i].role == "mafia":
+        if players[i].role == Role.MAFIA:
             mafia += 1
         else:
             townsfolk += 1
@@ -57,7 +60,10 @@ def game_cycle():
                 day_vote(players_alive)                    
         else:
             print("Game Over")
-            print(f"Mafia remaining: {mafia}")
-            print(f"Townsfolk remaining: {townsfolk}")
+            if mafia == 0:
+                win = "Townsfolk"
+            else:
+                win = "Mafia"
+            print(f"{win} have won the game!")
             game_over = True
             return

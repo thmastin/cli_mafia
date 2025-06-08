@@ -11,14 +11,9 @@ class PlayerType(Enum):
     AI = 1
 
 class Player:
-    def __init__(self, name, role, alive=True, type=PlayerType.AI):
+    def __init__(self, name, role=None, alive=True, type=PlayerType.AI):
         self.name = name
         self.role = role
         self.alive = alive
         self.type = type
-    
-    def assign_role(self):
-        if random.random() < 0.5:
-            self.role = Role.MAFIA
-        else:
-            self.role = Role.TOWN
+   
