@@ -11,7 +11,7 @@ number_of_players = 8
 def game_setup():
     # Make sure lists are empty
     players.clear()
-    players.clear()
+    players_alive.clear()
     
     # Determine the number of mafia (1/4 of players minimum 1)
     num_mafia = max(1, number_of_players // 4)
@@ -57,13 +57,12 @@ def game_cycle():
             game_phase = "night"
             day_vote(players_alive)
             day_count += 1                    
-    else:
-        print("Game Over")
-        print(f"{determine_winner(mafia)} have won the game!")
-        return
+    print("Game Over")
+    print(f"{determine_winner(mafia)} have won the game!")
+    return
 
 def win_check(mafia, townsfolk):
-    if townsfolk >0 and mafia <= len(players_alive):
+    if townsfolk > 0 and mafia <= len(players_alive):
         return False
     else:
         return True
