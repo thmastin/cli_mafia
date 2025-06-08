@@ -36,6 +36,8 @@ def game_cycle():
     townsfolk = 0
     game_over = False
     game_phase = "night"
+    night_count = 1
+    day_count = 1
     win = ""
 
     for i in range(len(players)):
@@ -43,21 +45,19 @@ def game_cycle():
             mafia += 1
         else:
             townsfolk += 1
-        print(f"Total mafia: {mafia}")
-        print(f"Total Townsfolk: {townsfolk}")
-        print(f"Players Alive: {len(players_alive)}")    
-
     while game_over == False:
         if townsfolk > 0 and mafia <= len(players_alive):
             if game_phase == "night":
-                print("It is night")
+                print(f"Night {night_count}:")
                 townsfolk -= 1
                 game_phase = "day"
                 night_vote(players_alive)
+                night_count += 1
             if game_phase == "day":
-                print("It is day")
+                print(f"Day {day_count}:")
                 game_phase = "night"
-                day_vote(players_alive)                    
+                day_vote(players_alive)
+                day_count += 1                    
         else:
             print("Game Over")
             if mafia == 0:
