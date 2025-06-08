@@ -38,15 +38,16 @@ def game_cycle():
     game_phase = "night"
     night_count = 1
     day_count = 1
-    win = ""
 
+    # Set the total number of Mafia and Townsfolk
     for i in range(len(players)):
         if players[i].role == Role.MAFIA:
             mafia += 1
         else:
             townsfolk += 1
-    while game_over == False:
-        if townsfolk > 0 and mafia <= len(players_alive):
+    
+    while game_over is False:
+        if win_check(mafia, townsfolk) is False:
             if game_phase == "night":
                 print(f"Night {night_count}:")
                 townsfolk -= 1
@@ -60,10 +61,18 @@ def game_cycle():
                 day_count += 1                    
         else:
             print("Game Over")
-            if mafia == 0:
-                win = "Townsfolk"
-            else:
-                win = "Mafia"
-            print(f"{win} have won the game!")
+            print(f"{determine_winner(mafia)} have won the game!")
             game_over = True
             return
+
+def win_check(mafia, townsfolk):
+    if townsfolk >0 and mafia <= len(players_alive):
+        return False
+    else:
+        return True
+
+def determine_winner(mafia):
+    if mafia == 0:
+        return "Townsfolk"
+    else:
+        return "Mafia"
