@@ -48,12 +48,16 @@ def game_cycle():
     while win_check(mafia, townsfolk) is False:
         if game_phase == "night":
             print(f"Night {night_count}:")
+            print(f"Players Alive:")
+            output_players_alive(players_alive)
             townsfolk -= 1
             game_phase = "day"
             night_vote(players_alive)
             night_count += 1
-        if game_phase == "day":
+        else: 
             print(f"Day {day_count}:")
+            print(f"Players Alive:")
+            output_players_alive(players_alive)
             game_phase = "night"
             day_vote(players_alive)
             day_count += 1                    
@@ -72,3 +76,7 @@ def determine_winner(mafia):
         return "Townsfolk"
     else:
         return "Mafia"
+    
+def output_players_alive(players_alive):
+    for player in players_alive:
+        print({player.name})
