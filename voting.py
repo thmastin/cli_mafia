@@ -41,11 +41,12 @@ def day_vote(voter_list):
         print(f"Total votes: {votes}")
 
 
-def night_vote(voter_list):
-    for voter in voter_list:
-        if voter.role == Role.MAFIA:
-            vote = mafia_vote(voter, voter_list)
-            print(f"{voter.name} votes for {vote.name}")
+def night_vote(players_alive):
+    eligible_targets = []
+    for player in players_alive:
+        if player.role is not Role.MAFIA:
+            eligible_targets.append(player)
+    return random.choice(eligible_targets)
       
             
 

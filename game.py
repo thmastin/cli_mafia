@@ -50,10 +50,11 @@ def game_cycle():
             print(f"Night {night_count}:")
             print(f"Players Alive:")
             output_players_alive(players_alive)
-            townsfolk -= 1
-            game_phase = "day"
-            night_vote(players_alive)
+            town_killed = night_vote(players_alive)
+            print(f"{town_killed.name} was killed last night")
+            players_alive.remove(town_killed)
             night_count += 1
+            game_phase = "day"    
         else: 
             print(f"Day {day_count}:")
             print(f"Players Alive:")
@@ -66,7 +67,7 @@ def game_cycle():
     return
 
 def win_check(mafia, townsfolk):
-    if townsfolk > 0 and mafia <= len(players_alive):
+    if townsfolk > 0 and mafia < len(players_alive):
         return False
     else:
         return True
