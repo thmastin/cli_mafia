@@ -1,5 +1,3 @@
-import random
-
 from enum import Enum
 
 class Role(Enum):
