@@ -38,7 +38,7 @@ def day_vote(voter_list):
                 votes[vote.name] = 1
  
             print(f"{voter.name} votes for {vote.name}")
-        print(f"Total votes: {votes}")
+    print(f"Total votes: {votes}")
 
 
 def night_vote(players_alive):
