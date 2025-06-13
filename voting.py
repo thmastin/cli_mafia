@@ -65,7 +65,10 @@ def night_vote(players_alive):
     for player in players_alive:
         if player.role is not Role.MAFIA:
             eligible_targets.append(player)
-    return random.choice(eligible_targets)
+    if eligible_targets == []:
+        return None
+    else:
+        return random.choice(eligible_targets)
       
             
 
