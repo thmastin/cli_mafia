@@ -70,6 +70,7 @@ def game_cycle():
             print(f"Players Alive:")
             output_players_alive(players_alive)
             game_phase = "night"
+            day_discuss(players_alive, day_count)
             day_vote(players_alive)
             day_killed = random.choice(players_alive)
             day_killed.alive = False
@@ -122,3 +123,16 @@ def count_roles(players_alive):
             townsfolk += 1
     
     return mafia, townsfolk
+
+def day_discuss(players_alive, count):
+    town_eligible = []
+    for player in players_alive:
+        if player.role is Role.TOWN:
+            town_eligible.append(player)
+    print(f'Day {count} Discussion:')
+    for player in players_alive:
+        if player.role is Role.MAFIA:
+            print(f"{player.name} accuses {random.choice(town_eligible).name}")
+        else:
+            print(f"{player.name} accuses {random.choice(players_alive).name}")
+           
