@@ -71,8 +71,7 @@ def game_cycle():
             output_players_alive(players_alive)
             game_phase = "night"
             day_discuss(players_alive, day_count)
-            day_vote(players_alive)
-            day_killed = random.choice(players_alive)
+            day_killed = day_vote(players_alive)
             day_killed.alive = False
             players_alive.remove(day_killed)
             print(f"{day_killed.name} was killed, they were {day_killed.role.value}")
