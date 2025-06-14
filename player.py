@@ -14,4 +14,9 @@ class Player:
         self.role = role
         self.alive = alive
         self.type = type
+
+    def player_vote(self):
+            print("Type in the player name you want to kill:")
+
+            
    
