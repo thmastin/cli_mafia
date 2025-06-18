@@ -147,12 +147,14 @@ def count_roles(players_alive):
 
 def day_discuss(players_alive, count):
     town_eligible = []
+
     if players[0].alive is True:
         while True:
             human_accuse = player_discuss()
             found = False
             for player in players_alive:
                 if human_accuse.lower() == player.name.lower():
+                    print(f'Day {count} Discussion:')
                     print(f"{players[0].name} accuses {human_accuse}")
                     found = True
                     break
@@ -163,7 +165,6 @@ def day_discuss(players_alive, count):
     for player in players_alive:
         if player.role is Role.TOWN:
             town_eligible.append(player)
-    print(f'Day {count} Discussion:')
     for player in players_alive:
         if player.role is Role.MAFIA and player.type == PlayerType.AI:
             print(f"{player.name} accuses {random.choice(town_eligible).name}")
