@@ -2,7 +2,7 @@ import random
 
 from player import *
 from voting import day_vote, night_vote
-from player_input import pause_game
+from player_input import pause_game, player_vote_mafia
 
 phase = "night"
 players = []
@@ -22,8 +22,11 @@ def game_setup():
     random.shuffle(roles)
 
     #Assign roles to players
-    for i in range(number_of_players):
-        new_player = Player(f"Player{i + 1}", roles[i])
+    human_player = Player("Player1 - Human", role=Role.MAFIA, type=PlayerType.HUMAN)
+    players.append(human_player)
+    players_alive.append(human_player)
+    for i in range(number_of_players - 1):
+        new_player = Player(f"Player{i + 2}", roles[i])
         players.append(new_player)
         players_alive.append(new_player)
 
@@ -52,8 +55,14 @@ def game_cycle():
             print(f"Players Alive:")
             output_players_alive(players_alive)
             pause_game()
-            town_killed = night_vote(players_alive)
-            print(f"{town_killed.name} was killed last night")
+            if players[0].alive is True and players[0].role is Role.MAFIA:
+                player_to_kill = player_vote_mafia()
+                for player in players_alive:
+                    if player_to_kill == player.name:
+                        town_killed = player
+            else:
+                town_killed = night_vote(players_alive)
+            print(f"{town_killed.name} was killed during the night")
             town_killed.alive = False
             players_alive.remove(town_killed)
             townsfolk -= 1
