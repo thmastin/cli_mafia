@@ -2,7 +2,7 @@ import random
 
 from player import *
 from voting import day_vote, night_vote
-from player_input import pause_game, player_vote_mafia
+from player_input import pause_game, player_vote_mafia, player_discuss
 
 phase = "night"
 players = []
@@ -89,6 +89,7 @@ def game_cycle():
             output_players_alive(players_alive)
             game_phase = "night"
             pause_game()
+
             day_discuss(players_alive, day_count)
             pause_game()
             day_killed = day_vote(players_alive)
@@ -146,13 +147,26 @@ def count_roles(players_alive):
 
 def day_discuss(players_alive, count):
     town_eligible = []
+    if players[0].alive is True:
+        while True:
+            human_accuse = player_discuss()
+            found = False
+            for player in players_alive:
+                if human_accuse.lower() == player.name.lower():
+                    print(f"{players[0].name} accuses {human_accuse}")
+                    found = True
+                    break
+            if found:
+                break
+            print("You must type in a player name that is still alive. Try again!")
+
     for player in players_alive:
         if player.role is Role.TOWN:
             town_eligible.append(player)
     print(f'Day {count} Discussion:')
     for player in players_alive:
-        if player.role is Role.MAFIA:
+        if player.role is Role.MAFIA and player.type == PlayerType.AI:
             print(f"{player.name} accuses {random.choice(town_eligible).name}")
-        else:
+        elif player.type == PlayerType.AI:
             print(f"{player.name} accuses {random.choice(players_alive).name}")
            
