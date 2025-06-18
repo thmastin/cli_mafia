@@ -51,15 +51,22 @@ def game_cycle():
             break
 
         if game_phase == "night":
+            town_killed = None
             print(f"Night {night_count}:")
             print(f"Players Alive:")
             output_players_alive(players_alive)
             pause_game()
             if players[0].alive is True and players[0].role is Role.MAFIA:
-                player_to_kill = player_vote_mafia()
-                for player in players_alive:
-                    if player_to_kill == player.name:
-                        town_killed = player
+                while True:
+                    player_to_kill = player_vote_mafia()
+                    for player in players_alive:
+                        if player_to_kill == player.name:
+                            town_killed = player
+                    if town_killed is not None and town_killed.role is not Role.MAFIA:
+                            print(town_killed.name)
+                            print(town_killed.alive)
+                            break
+                    print("You must enter a player's name that is a townsfolk and is still alive. Try again")
             else:
                 town_killed = night_vote(players_alive)
             print(f"{town_killed.name} was killed during the night")
