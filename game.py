@@ -92,7 +92,7 @@ def game_cycle():
 
             day_discuss(players_alive, day_count)
             pause_game()
-            day_killed = day_vote(players_alive)
+            day_killed = day_vote(players_alive, players)
             day_killed.alive = False
             players_alive.remove(day_killed)
             print(f"{day_killed.name} was killed, they were {day_killed.role.value}")

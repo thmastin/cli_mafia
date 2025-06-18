@@ -18,12 +18,12 @@ def player_discuss():
     return input("Type in a player's name to accuse them of being Mafia and press Enter: ")
 
 def player_vote_town():
-    player_vote = input("Type in ;Vote; followed by the player name to vote for a player to kill and then press Enter: ").lower().split()
-    if player_vote[0] != "vote":
+    player_vote = input("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ").lower().split()
+    if player_vote[0] != "vote" or player_vote == None:
         print("Invalid input, you must start with the command 'vote'. Try again!")
         player_vote_town()
     else:
         print(f"Player votes to kill {player_vote[1]}")
-        return player_vote
+        return player_vote[1]
     
         

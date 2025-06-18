@@ -1,6 +1,7 @@
 import random
 
-from player import Role
+from player import Role, PlayerType
+from player_input import player_vote_town
 
 def ai_vote(voter_list, exclude_voter = None, exclude_role = None):
     valid_choices = []
@@ -20,17 +21,32 @@ def town_vote(voter, voter_list):
 def mafia_vote(voter, voter_list):
     return ai_vote(voter_list, voter, Role.MAFIA)
 
-def day_vote(players_alive):
+def day_vote(players_alive, players):
     votes = {}
+    
+    # HUman voting and add to the votes dictionary
+    if players[0].alive is True:
+        while True:
+            human_vote = player_vote_town()
+            found = False
+            for player in players_alive:
+                if human_vote.lower() == player.name.lower():
+                    print(f"{players[0].name} votes for {player.name}")
+                    votes[player.name] = 1
+                    found = True
+                    break
+            if found:
+                break
+            print("You must type in a player name that is still alive. Try again!")
     for voter in players_alive:
-        if voter.role == Role.TOWN:
+        if voter.role == Role.TOWN and voter.type == PlayerType.AI:
             vote = town_vote(voter, players_alive)
             if vote.name in votes:
                 votes[vote.name] = votes[vote.name] + 1
             else:
                 votes[vote.name] = 1
             print(f"{voter.name} votes for {vote.name}")
-        else:
+        elif voter.type == PlayerType.AI:
             vote = mafia_vote(voter, players_alive)
             if vote.name in votes:
                 votes[vote.name] = votes[vote.name] + 1
