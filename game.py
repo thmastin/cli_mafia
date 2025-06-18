@@ -22,7 +22,7 @@ def game_setup():
     random.shuffle(roles)
 
     #Assign roles to players
-    human_player = Player("Player1 - Human", role=Role.MAFIA, type=PlayerType.HUMAN)
+    human_player = Player("Player1 - Human", role=roles[0], type=PlayerType.HUMAN)
     players.append(human_player)
     players_alive.append(human_player)
     for i in range(number_of_players - 1):
