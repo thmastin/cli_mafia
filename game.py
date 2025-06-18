@@ -60,13 +60,11 @@ def game_cycle():
                 while True:
                     player_to_kill = player_vote_mafia()
                     for player in players_alive:
-                        if player_to_kill == player.name:
+                        if player_to_kill == player.name.lower():
                             target = player
                     if target is not None and target.role is not Role.MAFIA:
-                            print(target.name)
-                            print(target.alive)
                             break
-                    print("You must enter a player's name that is a townsfolk and is still alive. Try again")
+                    print("You must enter a player's name that is a townsfolk and is still alive. Try again!")
             else:
                 target = night_vote(players_alive)
             print(f"{target.name} was killed during the night")
