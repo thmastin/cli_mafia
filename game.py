@@ -26,7 +26,7 @@ def game_setup():
     players.append(human_player)
     players_alive.append(human_player)
     for i in range(number_of_players - 1):
-        new_player = Player(f"Player{i + 2}", roles[i])
+        new_player = Player(f"Player{i + 2}", roles[i + 1])
         players.append(new_player)
         players_alive.append(new_player)
 
