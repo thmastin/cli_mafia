@@ -2,6 +2,7 @@ import random
 
 from player import *
 from voting import day_vote, night_vote
+from player_input import pause_game
 
 phase = "night"
 players = []
@@ -30,6 +31,7 @@ def game_setup():
     print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
     for player in players:
         print(f"{player.name}: {player.role.value}")
+    pause_game()
     
 def game_cycle():
     game_phase = "night"
@@ -49,6 +51,7 @@ def game_cycle():
             print(f"Night {night_count}:")
             print(f"Players Alive:")
             output_players_alive(players_alive)
+            pause_game()
             town_killed = night_vote(players_alive)
             print(f"{town_killed.name} was killed last night")
             town_killed.alive = False
@@ -64,13 +67,16 @@ def game_cycle():
                 print("Game Over")
                 print(f"{determine_winner(mafia)} have won the game!")
                 break
+            pause_game()
 
         else: 
             print(f"Day {day_count}:")
             print(f"Players Alive:")
             output_players_alive(players_alive)
             game_phase = "night"
+            pause_game()
             day_discuss(players_alive, day_count)
+            pause_game()
             day_killed = day_vote(players_alive)
             day_killed.alive = False
             players_alive.remove(day_killed)
@@ -88,6 +94,7 @@ def game_cycle():
                 print("Game Over")
                 print(f"{determine_winner(mafia)} have won the game!")
                 break
+            pause_game()
 
 def win_check(mafia, townsfolk):
     if mafia == 0 or mafia >= townsfolk:
