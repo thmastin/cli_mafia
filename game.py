@@ -32,8 +32,12 @@ def game_setup():
 
     #Debug: Print roles to verify
     print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
-    for player in players:
-        print(f"{player.name}: {player.role.value}")
+    if players[0].role == Role.MAFIA:
+        print(f"You are Mafia!")
+        for player in players:
+            print(f"{player.name}: {player.role.value}")
+    else:
+        print(f"You are a Townsfolk!")
     pause_game()
     
 def game_cycle():
