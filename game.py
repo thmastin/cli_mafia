@@ -3,42 +3,14 @@ import random
 from player import *
 from voting import day_vote, night_vote
 from player_input import pause_game, player_vote_mafia, player_discuss
-from setup import assign_roles
-
-phase = "night"
-players = []
-players_alive = []
-number_of_players = 8
-
-def game_setup():
-    # Make sure lists are empty
-    global players, players_alive
-    
-    players.clear()
-    players_alive.clear()
-    
-    # Determine the number of mafia (1/4 of players minimum 1)
-    num_mafia = max(1, number_of_players // 4)
-    
-    players, players_alive = assign_roles(number_of_players, num_mafia)
-
-    #Debug: Print roles to verify
-    print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
-    if players[0].role == Role.MAFIA:
-        print(f"You are Mafia!")
-        for player in players:
-            print(f"{player.name}: {player.role.value}")
-    else:
-        print(f"You are a Townsfolk!")
-    pause_game()
-    
-def game_cycle():
+  
+def game_cycle(players, players_alive):
     game_phase = "night"
     night_count = 1
     day_count = 1
 
     while True:
-        update_players_alive(players)
+        update_players_alive(players, players_alive)
         mafia, townsfolk = count_roles(players_alive)
 
         if win_check(mafia, townsfolk):
@@ -70,7 +42,7 @@ def game_cycle():
             night_count += 1
             game_phase = "day"
 
-            update_players_alive(players)
+            update_players_alive(players, players_alive)
             mafia, townsfolk = count_roles(players_alive)
 
             if win_check(mafia, townsfolk):
@@ -86,7 +58,7 @@ def game_cycle():
             game_phase = "night"
             pause_game()
 
-            day_discuss(players_alive, day_count)
+            day_discuss(players, players_alive, day_count)
             pause_game()
             day_killed = day_vote(players_alive, players)
             day_killed.alive = False
@@ -98,7 +70,7 @@ def game_cycle():
                 townsfolk -= 1
             day_count += 1
 
-            update_players_alive(players)
+            update_players_alive(players, players_alive)
             mafia, townsfolk = count_roles(players_alive)
 
             if win_check(mafia, townsfolk):
@@ -123,7 +95,7 @@ def output_players_alive(players_alive):
     for player in players_alive:
         print(player.name)
 
-def update_players_alive(players):
+def update_players_alive(players, players_alive):
     players_alive.clear()
     for player in players:
         if player.alive is True:
@@ -141,7 +113,7 @@ def count_roles(players_alive):
     
     return mafia, townsfolk
 
-def day_discuss(players_alive, count):
+def day_discuss(players, players_alive, count):
     town_eligible = []
 
     if players[0].alive is True:
