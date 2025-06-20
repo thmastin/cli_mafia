@@ -7,6 +7,8 @@ def player_vote_mafia():
     mafia_kill = input("Type in 'Kill' followed by the player name to kill and press Enter: ")
     split_kill = mafia_kill.split()
     print(split_kill)
+    if len(split_kill) <= 1:
+        return player_vote_mafia()
     if split_kill[0].lower() != "kill":
         print("Invalid input, you must start the command with 'Kill'.")
         return player_vote_mafia()
