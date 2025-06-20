@@ -3,6 +3,7 @@ import random
 from player import *
 from voting import day_vote, night_vote
 from player_input import pause_game, player_vote_mafia, player_discuss
+from setup import assign_roles
 
 phase = "night"
 players = []
@@ -11,24 +12,15 @@ number_of_players = 8
 
 def game_setup():
     # Make sure lists are empty
+    global players, players_alive
+    
     players.clear()
     players_alive.clear()
     
     # Determine the number of mafia (1/4 of players minimum 1)
     num_mafia = max(1, number_of_players // 4)
     
-    # Create role list with num_mafia MAFIA and remaining TOWN
-    roles = [Role.MAFIA] * num_mafia + [Role.TOWN] * (number_of_players - num_mafia)
-    random.shuffle(roles)
-
-    #Assign roles to players
-    human_player = Player("Player1 - Human", role=roles[0], type=PlayerType.HUMAN)
-    players.append(human_player)
-    players_alive.append(human_player)
-    for i in range(number_of_players - 1):
-        new_player = Player(f"Player{i + 2}", roles[i + 1])
-        players.append(new_player)
-        players_alive.append(new_player)
+    players, players_alive = assign_roles(number_of_players, num_mafia)
 
     #Debug: Print roles to verify
     print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
