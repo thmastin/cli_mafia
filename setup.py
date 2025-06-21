@@ -1,24 +1,27 @@
 import random
 from player import Role, Player, PlayerType
 from player_input import pause_game
+from ui import *
 
 def game_setup():
     number_of_players = 8
   
+    # Welcome the player to the game
+    welcome_message()
+    pause_game()
+
     # Determine the number of mafia (1/4 of players minimum 1)
     num_mafia = max(1, number_of_players // 4)
     
     players, players_alive = assign_roles(number_of_players, num_mafia)
-
-    #Debug: Print roles to verify
-    print(f"Total Mafia: {num_mafia} Total Townsfolk = {number_of_players - num_mafia}")
-    if players[0].role == Role.MAFIA:
-        print(f"You are Mafia!")
-        for player in players:
-            print(f"{player.name}: {player.role.value}")
-    else:
-        print(f"You are a Townsfolk!")
+    
+    # Tell the human player what their role is
+    print_human_role(players)
     pause_game()
+
+    if players[0].role is Role.MAFIA:
+        print_players_roles(players)
+        pause_game()
 
     return players, players_alive
 

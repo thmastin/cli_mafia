@@ -2,7 +2,7 @@ import random
 
 from player import *
 from voting import day_vote, night_vote
-from player_input import pause_game, player_vote_mafia, player_discuss
+from player_input import pause_game, player_vote_mafia,player_discuss
   
 def game_cycle(players, players_alive):
     game_phase = "night"
