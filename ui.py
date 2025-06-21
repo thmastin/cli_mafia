@@ -102,6 +102,10 @@ def prompt_discuss():
     print("Type in a player's name to accuse them of being Mafia and press Enter: ")
     return input().strip()
 
+def prompt_player_vote():
+    print("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ")
+    return input().strip()
+
 
 
 
