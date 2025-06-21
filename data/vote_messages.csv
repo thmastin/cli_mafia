@@ -1,0 +1,41 @@
+key,text
+vote_message_1,{voter_name} votes to kill {vote_name}
+vote_message_2,{voter_name} casts a vote for {vote_name}
+vote_message_3,{voter_name} chooses {vote_name} for elimination
+vote_message_4,{voter_name} selects {vote_name} to be removed
+vote_message_5,{voter_name} picks {vote_name} for the vote
+vote_message_6,{voter_name} votes for {vote_name}'s removal
+vote_message_7,{voter_name} nominates {vote_name} for execution
+vote_message_8,{voter_name} decides on {vote_name} for the vote
+vote_message_9,{voter_name} opts to eliminate {vote_name}
+vote_message_10,{voter_name} supports voting out {vote_name}
+vote_message_11,{voter_name} marks {vote_name} for the vote
+vote_message_12,{voter_name} casts a ballot against {vote_name}
+vote_message_13,{voter_name} chooses to vote for {vote_name}
+vote_message_14,{voter_name} votes to remove {vote_name}
+vote_message_15,{voter_name} selects {vote_name} for removal
+vote_message_16,{voter_name} places a vote on {vote_name}
+vote_message_17,{voter_name} picks {vote_name} to be voted out
+vote_message_18,{voter_name} votes for {vote_name} to leave
+vote_message_19,{voter_name} opts for {vote_name}'s elimination
+vote_message_20,{voter_name} nominates {vote_name} to be killed
+vote_message_21,{voter_name} casts a vote to kill {vote_name}
+vote_message_22,{voter_name} chooses {vote_name} to face the vote
+vote_message_23,{voter_name} votes for {vote_name}'s execution
+vote_message_24,{voter_name} selects {vote_name} as the target
+vote_message_25,{voter_name} decides to vote for {vote_name}
+vote_message_26,{voter_name} supports {vote_name}'s removal
+vote_message_27,{voter_name} picks {vote_name} for execution
+vote_message_28,{voter_name} votes to eliminate {vote_name}
+vote_message_29,{voter_name} casts a vote against {vote_name}
+vote_message_30,{voter_name} chooses {vote_name} for the ballot
+vote_message_31,{voter_name} nominates {vote_name} for the vote
+vote_message_32,{voter_name} opts to vote out {vote_name}
+vote_message_33,{voter_name} votes for {vote_name} to be removed
+vote_message_34,{voter_name} selects {vote_name} for the execution
+vote_message_35,{voter_name} casts a vote for {vote_name}'s removal
+vote_message_36,{voter_name} picks {vote_name} as the vote target
+vote_message_37,{voter_name} votes to send {vote_name} away
+vote_message_38,{voter_name} chooses {vote_name} for the final vote
+vote_message_39,{voter_name} supports eliminating {vote_name}
+vote_message_40,{voter_name} votes for {vote_name} to face judgment

@@ -1,3 +1,6 @@
+import csv_handler
+import random
+
 MOON_ART = """ 🌙 """
 
 SUN_ART = """ ☀️ """
@@ -79,7 +82,12 @@ def player_mafia_kill(target):
     print(f"You elect to kill {target}")
 
 def vote(voter_name, vote_name):
-    print(f"{voter_name} votes to kill {vote_name}")
+    vote_messages = csv_handler.load_vote_messages()
+    keys_list = list(vote_messages.keys())
+    random_key = random.choice(keys_list)
+    message = vote_messages[random_key]
+
+    print(f"{message.format(voter_name = voter_name, vote_name = vote_name)}")
 
 def voting_results(sorted_votes, loser):
     print("--------------------------------------")
