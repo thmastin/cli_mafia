@@ -19,3 +19,31 @@ def end_of_game(winner, players):
     print(f"The players roles were:")
     print("---------------------------------------")
     print_players_roles(players)
+
+def print_game_phase(game_phase, count):
+    print(f"====== {game_phase.capitalize()} {count} ======")
+
+def print_players_alive(players_alive):
+    print("Players still living")
+    print("--------------------------------------")
+    for player in players_alive:
+        print(f"{player.name}")
+
+def mafia_kill_message(target):
+    print(f"{target.name} was killed by the mafia during the night.")
+
+def town_kill_message(day_killed):
+    print(f"{day_killed.name} was killed, they were {day_killed.role.value}")
+
+def print_discussion(accused_players, count, game_phase):
+    print(f"{game_phase.capitalize()} {count} Discussion")
+    print("--------------------------------------")
+    for player in accused_players:
+        print(f"{player[0]} accuses {player[1]}")
+
+
+
+
+
+
+

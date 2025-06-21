@@ -3,12 +3,11 @@ import random
 from player import *
 from voting import day_vote, night_vote
 from player_input import pause_game, player_vote_mafia,player_discuss
-from ui import end_of_game
+from ui import end_of_game, print_game_phase, print_players_alive, mafia_kill_message, town_kill_message, print_discussion
   
 def game_cycle(players, players_alive):
     game_phase = "night"
-    night_count = 1
-    day_count = 1
+    count = 1
 
     while True:
         update_players_alive(players, players_alive)
@@ -22,9 +21,8 @@ def game_cycle(players, players_alive):
 
         if game_phase == "night":
             target = None
-            print(f"Night {night_count}:")
-            print(f"Players Alive:")
-            output_players_alive(players_alive)
+            print_game_phase(game_phase, count)
+            print_players_alive(players_alive)
             pause_game()
             if players[0].alive is True and players[0].role is Role.MAFIA:
                 while True:
@@ -37,11 +35,10 @@ def game_cycle(players, players_alive):
                     print("You must enter a player's name that is a townsfolk and is still alive. Try again!")
             else:
                 target = night_vote(players_alive)
-            print(f"{target.name} was killed during the night")
+            mafia_kill_message(target)
             target.alive = False
             players_alive.remove(target)
             townsfolk -= 1
-            night_count += 1
             game_phase = "day"
 
             update_players_alive(players, players_alive)
@@ -55,23 +52,22 @@ def game_cycle(players, players_alive):
             pause_game()
 
         else: 
-            print(f"Day {day_count}:")
-            print(f"Players Alive:")
-            output_players_alive(players_alive)
+            print_game_phase(game_phase, count)
+            print_players_alive(players_alive)
             game_phase = "night"
             pause_game()
 
-            day_discuss(players, players_alive, day_count)
+            day_discuss(players, players_alive, count)
             pause_game()
             day_killed = day_vote(players_alive, players)
             day_killed.alive = False
             players_alive.remove(day_killed)
-            print(f"{day_killed.name} was killed, they were {day_killed.role.value}")
+            town_kill_message(day_killed)
             if day_killed.role is Role.MAFIA:
                 mafia -= 1
             else:
                 townsfolk -= 1
-            day_count += 1
+            count += 1
 
             update_players_alive(players, players_alive)
             mafia, townsfolk = count_roles(players_alive)
@@ -95,10 +91,6 @@ def determine_winner(mafia):
     else:
         return "Mafia"
     
-def output_players_alive(players_alive):
-    for player in players_alive:
-        print(player.name)
-
 def update_players_alive(players, players_alive):
     players_alive.clear()
     for player in players:
@@ -119,6 +111,7 @@ def count_roles(players_alive):
 
 def day_discuss(players, players_alive, count):
     town_eligible = []
+    accused_players = []
 
     if players[0].alive is True:
         while True:
@@ -126,8 +119,8 @@ def day_discuss(players, players_alive, count):
             found = False
             for player in players_alive:
                 if human_accuse.lower() == player.name.lower():
-                    print(f'Day {count} Discussion:')
-                    print(f"{players[0].name} accuses {human_accuse}")
+                    accused = (players[0].name, human_accuse)
+                    accused_players.append(accused)
                     found = True
                     break
             if found:
@@ -139,7 +132,10 @@ def day_discuss(players, players_alive, count):
             town_eligible.append(player)
     for player in players_alive:
         if player.role is Role.MAFIA and player.type == PlayerType.AI:
-            print(f"{player.name} accuses {random.choice(town_eligible).name}")
+            accused = (player.name, random.choice(town_eligible).name)
+            accused_players.append(accused)
         elif player.type == PlayerType.AI:
-            print(f"{player.name} accuses {random.choice(players_alive).name}")
+            accused = (player.name,random.choice(players_alive).name)
+            accused_players.append(accused)
+    print_discussion(accused_players, count, "Day")
            
