@@ -1,3 +1,5 @@
+import ui
+
 from player import Player
 
 def pause_game():
@@ -10,10 +12,10 @@ def player_vote_mafia():
     if len(split_kill) <= 1:
         return player_vote_mafia()
     if split_kill[0].lower() != "kill":
-        print("Invalid input, you must start the command with 'Kill'.")
+        ui.invalid_kill_error()
         return player_vote_mafia()
     else:
-        print(f"Player elects to kill {split_kill[1]}")
+        ui.player_mafia_kill(split_kill[1])
         return split_kill[1].lower()
     
 def player_discuss():
@@ -24,12 +26,11 @@ def player_vote_town():
     player_vote = input("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ").lower().split()
     print(player_vote)
     if player_vote == []:
-        print("Invalid input, you must start with the command 'vote'. Try again!")
+        ui.invalid_vote_error()
         return player_vote_town()
     if player_vote[0] != "vote":
-        print("Invalid input, you must start with the command 'vote'. Try again!")
+        ui.invalid_vote_error()
         return player_vote_town()
-    print(f"Player votes to kill {player_vote[1]}")
     return player_vote[1]
     
         

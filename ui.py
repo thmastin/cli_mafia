@@ -53,16 +53,27 @@ def print_discussion(accused_players, count, game_phase):
     for player in accused_players:
         print(f"{player[0]} accuses {player[1]}")
 
+# Input Error Messages
+
 def mafia_input_error():
     print("You must enter a player's name that is a townsfolk and is still alive. Try again!")
 
 def player_not_alive_error():
     print("You must type in a player name that is still alive. Try again!")
 
+def invalid_kill_error():
+    print("Invalid input, you must start the command with 'Kill'.")
+
+def invalid_vote_error():
+    print("Invalid input, you must start with the command 'vote'. Try again!")
+
 def town_voting_header():
     print("--------------------------------------")
     print('The town begins voting...')
     print("--------------------------------------")
+
+def player_mafia_kill(target):
+    print(f"You elect to kill {target}")
 
 def vote(voter_name, vote_name):
     print(f"{voter_name} votes to kill {vote_name}")
