@@ -1,4 +1,5 @@
 import random
+import ui
 
 from player import Role, PlayerType
 from player_input import player_vote_town
@@ -37,7 +38,7 @@ def day_vote(players_alive, players):
                     break
             if found:
                 break
-            print("You must type in a player name that is still alive. Try again!")
+            ui.player_not_alive_error()
     for voter in players_alive:
         if voter.role == Role.TOWN and voter.type == PlayerType.AI:
             vote = town_vote(voter, players_alive)
