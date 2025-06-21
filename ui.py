@@ -67,6 +67,9 @@ def invalid_kill_error():
 def invalid_vote_error():
     print("Invalid input, you must start with the command 'vote'. Try again!")
 
+def empty_player_name():
+    print("ERROR: You must enter a name.")
+
 def town_voting_header():
     print("--------------------------------------")
     print('The town begins voting...')
@@ -106,9 +109,18 @@ def prompt_player_vote():
     print("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ")
     return input().strip()
 
-def get_payer_name():
+def prompt_payer_name():
     print("Enter your name and press <Enter>:")
     return input().strip()
+
+def player_name():
+    while True:
+        name = prompt_payer_name()
+        if name != "":
+            break
+        else:
+            empty_player_name()
+    return name
 
 
 

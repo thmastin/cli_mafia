@@ -36,7 +36,7 @@ def assign_roles(num_players, num_mafia):
     random.shuffle(roles)
 
     # Assign roles to players
-    human_player = Player(ui.get_payer_name(), role=roles[0], type=PlayerType.HUMAN)
+    human_player = Player(ui.player_name(), role=roles[0], type=PlayerType.HUMAN)
     players.append(human_player)
     players_alive.append(human_player)
     for i in range(num_players - 1):
