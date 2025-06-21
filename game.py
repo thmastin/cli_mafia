@@ -133,10 +133,12 @@ def day_discuss(players, players_alive, count):
             town_eligible.append(player)
     for player in players_alive:
         if player.role is Role.MAFIA and player.type == PlayerType.AI:
-            accused = (player.name, random.choice(town_eligible).name)
+            possible_targets = [p for p in town_eligible if p != player]
+            accused = (player.name, random.choice(possible_targets).name)
             accused_players.append(accused)
         elif player.type == PlayerType.AI:
-            accused = (player.name,random.choice(players_alive).name)
+            possible_targets = [p for p in players_alive if p != player]
+            accused = (player.name,random.choice(possible_targets).name)
             accused_players.append(accused)
     ui.print_discussion(accused_players, count, "Day")
            
