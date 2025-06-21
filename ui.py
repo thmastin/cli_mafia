@@ -106,6 +106,10 @@ def prompt_player_vote():
     print("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ")
     return input().strip()
 
+def get_payer_name():
+    print("Enter your name and press <Enter>:")
+    return input().strip()
+
 
 
 
