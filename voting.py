@@ -33,7 +33,7 @@ def day_vote(players_alive, players):
             found = False
             for player in players_alive:
                 if human_vote.lower() == player.name.lower():
-                    ui.vote(players[0].name, human_vote)
+                    ui.vote(players[0].name, human_vote.capitalize())
                     votes[player.name] = 1
                     found = True
                     break

@@ -51,7 +51,7 @@ def print_discussion(accused_players, count, game_phase):
     print(f"{game_phase.capitalize()} {count} Discussion")
     print("--------------------------------------")
     for player in accused_players:
-        print(f"{player[0]} accuses {player[1]}")
+        print(f"{player[0]} accuses {player[1].capitalize()}")
 
 # Input Error Messages
 
