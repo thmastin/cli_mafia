@@ -3,10 +3,10 @@ import ui
 from player import Player
 
 def pause_game():
-    input("Press Enter to continue...")
+    ui.prompt_pause()
 
 def player_vote_mafia():
-    mafia_kill = input("Type in 'Kill' followed by the player name to kill and press Enter: ")
+    mafia_kill = ui.prompt_mafia_kill()
     split_kill = mafia_kill.split()
     print(split_kill)
     if len(split_kill) <= 1:
@@ -19,13 +19,12 @@ def player_vote_mafia():
         return split_kill[1].lower()
     
 def player_discuss():
-    return input("Type in a player's name to accuse them of being Mafia and press Enter: ")
+    return ui.prompt_discuss()
 
 def player_vote_town():
     player_vote = []
-    player_vote = input("Type in 'Vote' followed by the player name to vote for a player to kill and then press Enter: ").lower().split()
-    print(player_vote)
-    if player_vote == []:
+    player_vote = ui.prompt_player_vote().lower().split()
+    if len(player_vote) < 2:
         ui.invalid_vote_error()
         return player_vote_town()
     if player_vote[0] != "vote":

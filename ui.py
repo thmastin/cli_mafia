@@ -88,6 +88,20 @@ def voting_results(sorted_votes, loser):
     print(f"Player getting the most votes: {loser}")
     print("--------------------------------------")
 
+# Player input messages
+
+def prompt_pause():
+    print('Press Etner to continue...')
+    return input().strip
+
+def prompt_mafia_kill():
+    print("Type in 'Kill' followed by the player name to kill and press Enter: ")
+    return input().strip()
+
+def prompt_discuss():
+    print("Type in a player's name to accuse them of being Mafia and press Enter: ")
+    return input().strip()
+
 
 
 
