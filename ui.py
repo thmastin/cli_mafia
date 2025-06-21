@@ -1,3 +1,6 @@
+MOON_ART = """ 🌙 """
+
+SUN_ART = """ ☀️ """
 
 # Print functions for the game setup phase of the game
 
@@ -21,7 +24,16 @@ def end_of_game(winner, players):
     print_players_roles(players)
 
 def print_game_phase(game_phase, count):
-    print(f"====== {game_phase.capitalize()} {count} ======")
+    if game_phase == "night":
+        print(f"""
+{MOON_ART}
+Night {count}
+        """)
+    else:  # game_phase == "day"
+        print(f"""
+{SUN_ART}
+Day {count}
+        """)
 
 def print_players_alive(players_alive):
     print("Players still living")
@@ -41,6 +53,11 @@ def print_discussion(accused_players, count, game_phase):
     for player in accused_players:
         print(f"{player[0]} accuses {player[1]}")
 
+def mafia_input_error():
+    print("You must enter a player's name that is a townsfolk and is still alive. Try again!")
+
+def player_not_alive_error():
+    print("You must type in a player name that is still alive. Try again!")
 
 
 

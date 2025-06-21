@@ -1,9 +1,10 @@
 import random
+import ui
 
 from player import *
 from voting import day_vote, night_vote
 from player_input import pause_game, player_vote_mafia,player_discuss
-from ui import end_of_game, print_game_phase, print_players_alive, mafia_kill_message, town_kill_message, print_discussion
+
   
 def game_cycle(players, players_alive):
     game_phase = "night"
@@ -15,14 +16,14 @@ def game_cycle(players, players_alive):
 
         if win_check(mafia, townsfolk):
             winner = determine_winner(mafia)
-            end_of_game(winner, players)
+            ui.end_of_game(winner, players)
             pause_game()
             break
 
         if game_phase == "night":
             target = None
-            print_game_phase(game_phase, count)
-            print_players_alive(players_alive)
+            ui.print_game_phase(game_phase, count)
+            ui.print_players_alive(players_alive)
             pause_game()
             if players[0].alive is True and players[0].role is Role.MAFIA:
                 while True:
@@ -32,10 +33,10 @@ def game_cycle(players, players_alive):
                             target = player
                     if target is not None and target.role is not Role.MAFIA:
                             break
-                    print("You must enter a player's name that is a townsfolk and is still alive. Try again!")
+                    ui.mafia_input_error()
             else:
                 target = night_vote(players_alive)
-            mafia_kill_message(target)
+            ui.mafia_kill_message(target)
             target.alive = False
             players_alive.remove(target)
             townsfolk -= 1
@@ -46,14 +47,14 @@ def game_cycle(players, players_alive):
 
             if win_check(mafia, townsfolk):
                 winner = determine_winner(mafia)
-                end_of_game(winner, players)
+                ui.end_of_game(winner, players)
                 pause_game()
                 break
             pause_game()
 
         else: 
-            print_game_phase(game_phase, count)
-            print_players_alive(players_alive)
+            ui.print_game_phase(game_phase, count)
+            ui.print_players_alive(players_alive)
             game_phase = "night"
             pause_game()
 
@@ -62,7 +63,7 @@ def game_cycle(players, players_alive):
             day_killed = day_vote(players_alive, players)
             day_killed.alive = False
             players_alive.remove(day_killed)
-            town_kill_message(day_killed)
+            ui.town_kill_message(day_killed)
             if day_killed.role is Role.MAFIA:
                 mafia -= 1
             else:
@@ -74,7 +75,7 @@ def game_cycle(players, players_alive):
 
             if win_check(mafia, townsfolk):
                 winner = determine_winner(mafia)
-                end_of_game(winner, players)
+                ui.end_of_game(winner, players)
                 pause_game()
                 break
             pause_game()
@@ -125,7 +126,7 @@ def day_discuss(players, players_alive, count):
                     break
             if found:
                 break
-            print("You must type in a player name that is still alive. Try again!")
+            ui.player_not_alive_error()
 
     for player in players_alive:
         if player.role is Role.TOWN:
@@ -137,5 +138,5 @@ def day_discuss(players, players_alive, count):
         elif player.type == PlayerType.AI:
             accused = (player.name,random.choice(players_alive).name)
             accused_players.append(accused)
-    print_discussion(accused_players, count, "Day")
+    ui.print_discussion(accused_players, count, "Day")
            
