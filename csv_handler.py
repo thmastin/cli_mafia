@@ -9,6 +9,5 @@ def load_player_names():
         player_names = []
         for line in csv_reader:
             player_names.append(line[0])
-    print(player_names)
     return player_names
 
