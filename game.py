@@ -3,6 +3,7 @@ import random
 from player import *
 from voting import day_vote, night_vote
 from player_input import pause_game, player_vote_mafia,player_discuss
+from ui import end_of_game
   
 def game_cycle(players, players_alive):
     game_phase = "night"
@@ -14,8 +15,9 @@ def game_cycle(players, players_alive):
         mafia, townsfolk = count_roles(players_alive)
 
         if win_check(mafia, townsfolk):
-            print("Game Over")
-            print(f"{determine_winner(mafia)} have won the game!")
+            winner = determine_winner(mafia)
+            end_of_game(winner, players)
+            pause_game()
             break
 
         if game_phase == "night":
@@ -46,8 +48,9 @@ def game_cycle(players, players_alive):
             mafia, townsfolk = count_roles(players_alive)
 
             if win_check(mafia, townsfolk):
-                print("Game Over")
-                print(f"{determine_winner(mafia)} have won the game!")
+                winner = determine_winner(mafia)
+                end_of_game(winner, players)
+                pause_game()
                 break
             pause_game()
 
@@ -74,8 +77,9 @@ def game_cycle(players, players_alive):
             mafia, townsfolk = count_roles(players_alive)
 
             if win_check(mafia, townsfolk):
-                print("Game Over")
-                print(f"{determine_winner(mafia)} have won the game!")
+                winner = determine_winner(mafia)
+                end_of_game(winner, players)
+                pause_game()
                 break
             pause_game()
 
