@@ -59,6 +59,32 @@ def mafia_input_error():
 def player_not_alive_error():
     print("You must type in a player name that is still alive. Try again!")
 
+def town_voting_header():
+    print("--------------------------------------")
+    print('The town begins voting...')
+    print("--------------------------------------")
+
+def vote(voter_name, vote_name):
+    print(f"{voter_name} votes to kill {vote_name}")
+
+def voting_results(sorted_votes, loser):
+    print("--------------------------------------")
+    print("Votes in order (highest to lowest)")
+    print("--------------------------------------")
+    for player_name, vote_count in sorted_votes:
+        print(f"{player_name}: {vote_count} vote{'s' if vote_count != 1 else ''}")
+    print("--------------------------------------")
+    print(f"Player getting the most votes: {loser}")
+    print("--------------------------------------")
+
+
+
+
+       
+
+
+
+
 
 
 

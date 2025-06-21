@@ -24,6 +24,7 @@ def mafia_vote(voter, voter_list):
 
 def day_vote(players_alive, players):
     votes = {}
+    ui.town_voting_header()
     
     # HUman voting and add to the votes dictionary
     if players[0].alive is True:
@@ -32,7 +33,7 @@ def day_vote(players_alive, players):
             found = False
             for player in players_alive:
                 if human_vote.lower() == player.name.lower():
-                    print(f"{players[0].name} votes for {player.name}")
+                    ui.vote(players[0].name, human_vote)
                     votes[player.name] = 1
                     found = True
                     break
@@ -46,19 +47,16 @@ def day_vote(players_alive, players):
                 votes[vote.name] = votes[vote.name] + 1
             else:
                 votes[vote.name] = 1
-            print(f"{voter.name} votes for {vote.name}")
+            ui.vote(voter.name, vote.name)
         elif voter.type == PlayerType.AI:
             vote = mafia_vote(voter, players_alive)
             if vote.name in votes:
                 votes[vote.name] = votes[vote.name] + 1
             else:
                 votes[vote.name] = 1
- 
-            print(f"{voter.name} votes for {vote.name}")
+            ui.vote(voter.name, vote.name)
+
     sorted_votes = sorted(votes.items(), key=lambda item: (-item[1], item[0]))
-    print("Votes in order (highest to lowest):")
-    for player_name, vote_count in sorted_votes:
-        print(f"{player_name}: {vote_count} vote{'s' if vote_count != 1 else ''}")
 
     max_votes = max(votes.values())
     most_voted = []
@@ -71,11 +69,11 @@ def day_vote(players_alive, players):
         loser = random.choice(most_voted)
     else:
         loser = most_voted[0]
-    print(f"Player getting the most votes: {loser}")
+    ui.voting_results(sorted_votes, loser)
+
     for key in players_alive:
         if key.name == loser:
             return key
-
 
 def night_vote(players_alive):
     eligible_targets = []
