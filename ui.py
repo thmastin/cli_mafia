@@ -147,6 +147,24 @@ def player_name():
             empty_player_name()
     return name
 
+def game_start():
+    print("--------------------------------------")
+    print(f"The game begins...")
+    print("--------------------------------------")
+
+def flavor_text():
+    town_names = csv_handler.load_town_names()
+    town_keys_list = list(town_names.keys())
+    random_town_key = random.choice(town_keys_list)
+    town = town_names[random_town_key]
+
+    flavor_texts = csv_handler.load_flavor_text()
+    flavor_keys_list = list(flavor_texts.keys())
+    random_flavor_key = random.choice(flavor_keys_list)
+    message = flavor_texts[random_flavor_key]
+    print(f"{message.format(town_name = town)}")
+   
+
 
 
 

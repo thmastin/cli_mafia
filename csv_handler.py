@@ -57,6 +57,24 @@ def load_greeting_messages():
             greeting_messages[line[0]] = line[1]
     return greeting_messages
 
+def load_town_names():
+    with open("data/town_names.csv") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)
+        town_names = {}
+        for line in csv_reader:
+            town_names[line[0]] = line[1]
+    return town_names
+
+def load_flavor_text():
+    with open("data/flavor_text.csv") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)
+        flavor_texts = {}
+        for line in csv_reader:
+            flavor_texts[line[0]] = line[1]
+    return flavor_texts
+
 
 
 

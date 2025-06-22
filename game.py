@@ -9,6 +9,8 @@ from player_input import pause_game, player_vote_mafia,player_discuss
 def game_cycle(players, players_alive):
     game_phase = "night"
     count = 1
+    ui.game_start()
+    ui.flavor_text()
 
     while True:
         update_players_alive(players, players_alive)

@@ -11,7 +11,6 @@ def game_setup():
   
     # Welcome the player to the game
     ui.welcome_message()
-    pause_game()
 
     # Determine the number of mafia (1/4 of players minimum 1)
     num_mafia = max(1, number_of_players // 4)
@@ -24,7 +23,6 @@ def game_setup():
 
     if players[0].role is Role.MAFIA:
         ui.print_players_roles(players)
-        pause_game()
 
     return players, players_alive
 

@@ -8,7 +8,6 @@ def pause_game():
 def player_vote_mafia():
     mafia_kill = ui.prompt_mafia_kill()
     split_kill = mafia_kill.split()
-    print(split_kill)
     if len(split_kill) <= 1:
         return player_vote_mafia()
     if split_kill[0].lower() != "kill":
