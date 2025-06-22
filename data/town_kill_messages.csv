@@ -1,41 +1,41 @@
 key,text
-town_kill_message_1,{target_name} stood in the town square at noon. The town gathered around. They killed {target_name} together.
-town_kill_message_2,{target_name} waited in the village center in the sun. The town voted loudly. They killed {target_name} there.
-town_kill_message_3,{target_name} stood by the old well in daylight. The town pointed at them. They killed {target_name} quickly.
-town_kill_message_4,{target_name} faced the crowd in the market square. The town shouted their name. They killed {target_name} at dusk.
-town_kill_message_5,{target_name} stood in the open field at noon. The town came together. They killed {target_name} that day.
-town_kill_message_6,{target_name} waited in the town hall in the morning. The town decided fast. They killed {target_name} there.
-town_kill_message_7,{target_name} stood under the big tree in the sun. The town voted as one. They killed {target_name} soon.
-town_kill_message_8,{target_name} faced the village by the church. The town raised their hands. They killed {target_name} at noon.
-town_kill_message_9,{target_name} stood in the busy square in daylight. The town called their name. They killed {target_name} together.
-town_kill_message_10,{target_name} waited by the town gate in the morning. The town gathered close. They killed {target_name} there.
-town_kill_message_11,{target_name} stood in the village park at noon. The town shouted loudly. They killed {target_name} that day.
-town_kill_message_12,{target_name} faced the crowd near the old barn. The town voted quickly. They killed {target_name} at sunset.
-town_kill_message_13,{target_name} stood in the quiet square in the sun. The town pointed fingers. They killed {target_name} fast.
-town_kill_message_14,{target_name} waited in the open meadow at noon. The town came as one. They killed {target_name} there.
-town_kill_message_15,{target_name} stood by the village well in daylight. The town raised voices. They killed {target_name} soon.
-town_kill_message_16,{target_name} faced the town in the wide street. The town voted together. They killed {target_name} at noon.
-town_kill_message_17,{target_name} stood by the town bridge in the sun. The town gathered round. They killed {target_name} there.
-town_kill_message_18,{target_name} waited in the village square at dawn. The town shouted names. They killed {target_name} that day.
-town_kill_message_19,{target_name} stood near the old church in daylight. The town pointed at them. They killed {target_name} fast.
-town_kill_message_20,{target_name} faced the crowd by the town tree. The town voted loudly. They killed {target_name} at dusk.
-town_kill_message_21,{target_name} stood in the market place at noon. The town came together. They killed {target_name} there.
-town_kill_message_22,{target_name} waited in the village hall in the sun. The town decided quick. They killed {target_name} soon.
-town_kill_message_23,{target_name} stood by the town fence in daylight. The town raised hands. They killed {target_name} that day.
-town_kill_message_24,{target_name} faced the crowd in the open square. The town shouted votes. They killed {target_name} at noon.
-town_kill_message_25,{target_name} stood by the village gate in the morning. The town gathered fast. They killed {target_name} there.
-town_kill_message_26,{target_name} waited in a quiet field at noon. The town voted as one. They killed {target_name} fast.
-town_kill_message_27,{target_name} stood in the village square at sunrise. The town pointed loudly. They killed {target_name} soon.
-town_kill_message_28,{target_name} faced the town by the old well. The town called their name. They killed {target_name} there.
-town_kill_message_29,{target_name} stood in the wide street in daylight. The town voted together. They killed {target_name} at noon.
-town_kill_message_30,{target_name} waited near the town barn in the sun. The town shouted votes. They killed {target_name} fast.
-town_kill_message_31,{target_name} stood by the village bridge at noon. The town gathered close. They killed {target_name} there.
-town_kill_message_32,{target_name} faced the crowd in the town park. The town raised voices. They killed {target_name} at dusk.
-town_kill_message_33,{target_name} stood in an open field in daylight. The town voted quick. They killed {target_name} soon.
-town_kill_message_34,{target_name} waited by the church in the morning. The town pointed fingers. They killed {target_name} there.
-town_kill_message_35,{target_name} stood in the village square in the sun. The town shouted names. They killed {target_name} fast.
-town_kill_message_36,{target_name} faced the town by the old tree. The town voted loudly. They killed {target_name} at noon.
-town_kill_message_37,{target_name} stood in the market square at dawn. The town gathered round. They killed {target_name} there.
-town_kill_message_38,{target_name} waited in the quiet street in daylight. The town raised hands. They killed {target_name} soon.
-town_kill_message_39,{target_name} stood by the town gate at noon. The town voted together. They killed {target_name} fast.
-town_kill_message_40,{target_name} faced the crowd in the village meadow. The town shouted votes. They killed {target_name} there.
+town_kill_message_1,{target_name} stood in the town square at noon. The town voted together. They killed {target_name} a {target_role}.
+town_kill_message_2,{target_name} waited in the village center in the sun. The town shouted votes. They killed {target_name} a {target_role}.
+town_kill_message_3,{target_name} stood by the old well in daylight. The town pointed at them. They killed {target_name} a {target_role}.
+town_kill_message_4,{target_name} faced the crowd in the market square. The town called their name. They killed {target_name} a {target_role}.
+town_kill_message_5,{target_name} stood in the open field at noon. The town gathered close. They killed {target_name} a {target_role}.
+town_kill_message_6,{target_name} waited in the town hall in the morning. The town voted fast. They killed {target_name} a {target_role}.
+town_kill_message_7,{target_name} stood under the big tree in the sun. The town raised hands. They killed {target_name} a {target_role}.
+town_kill_message_8,{target_name} faced the village by the church. The town shouted loudly. They killed {target_name} a {target_role}.
+town_kill_message_9,{target_name} stood in the busy square in daylight. The town voted together. They killed {target_name} a {target_role}.
+town_kill_message_10,{target_name} waited by the town gate in the morning. The town pointed fingers. They killed {target_name} a {target_role}.
+town_kill_message_11,{target_name} stood in the village park at noon. The town gathered round. They killed {target_name} a {target_role}.
+town_kill_message_12,{target_name} faced the crowd near the old barn. The town voted quickly. They killed {target_name} a {target_role}.
+town_kill_message_13,{target_name} stood in the quiet square in the sun. The town shouted votes. They killed {target_name} a {target_role}.
+town_kill_message_14,{target_name} waited in the open meadow at noon. The town raised voices. They killed {target_name} a {target_role}.
+town_kill_message_15,{target_name} stood by the village well in daylight. The town voted loudly. They killed {target_name} a {target_role}.
+town_kill_message_16,{target_name} faced the town in the wide street. The town gathered close. They killed {target_name} a {target_role}.
+town_kill_message_17,{target_name} stood by the town bridge in the sun. The town pointed at them. They killed {target_name} a {target_role}.
+town_kill_message_18,{target_name} waited in the village square at dawn. The town voted together. They killed {target_name} a {target_role}.
+town_kill_message_19,{target_name} stood near the old church in daylight. The town shouted names. They killed {target_name} a {target_role}.
+town_kill_message_20,{target_name} faced the crowd by the town tree. The town raised hands. They killed {target_name} a {target_role}.
+town_kill_message_21,{target_name} stood in the market place at noon. The town voted quickly. They killed {target_name} a {target_role}.
+town_kill_message_22,{target_name} waited in the village hall in the sun. The town gathered fast. They killed {target_name} a {target_role}.
+town_kill_message_23,{target_name} stood by the town fence in daylight. The town shouted votes. They killed {target_name} a {target_role}.
+town_kill_message_24,{target_name} faced the crowd in the open square. The town voted loudly. They killed {target_name} a {target_role}.
+town_kill_message_25,{target_name} stood by the village gate in the morning. The town pointed fingers. They killed {target_name} a {target_role}.
+town_kill_message_26,{target_name} waited in a quiet field at noon. The town gathered close. They killed {target_name} a {target_role}.
+town_kill_message_27,{target_name} stood in the village square at sunrise. The town voted together. They killed {target_name} a {target_role}.
+town_kill_message_28,{target_name} faced the town by the old well. The town raised voices. They killed {target_name} a {target_role}.
+town_kill_message_29,{target_name} stood in the wide street in daylight. The town shouted names. They killed {target_name} a {target_role}.
+town_kill_message_30,{target_name} waited near the town barn in the sun. The town voted fast. They killed {target_name} a {target_role}.
+town_kill_message_31,{target_name} stood by the village bridge at noon. The town gathered round. They killed {target_name} a {target_role}.
+town_kill_message_32,{target_name} faced the crowd in the town park. The town pointed at them. They killed {target_name} a {target_role}.
+town_kill_message_33,{target_name} stood in an open field in daylight. The town voted quickly. They killed {target_name} a {target_role}.
+town_kill_message_34,{target_name} waited by the church in the morning. The town shouted votes. They killed {target_name} a {target_role}.
+town_kill_message_35,{target_name} stood in the village square in the sun. The town raised hands. They killed {target_name} a {target_role}.
+town_kill_message_36,{target_name} faced the town by the old tree. The town voted loudly. They killed {target_name} a {target_role}.
+town_kill_message_37,{target_name} stood in the market square at dawn. The town gathered close. They killed {target_name} a {target_role}.
+town_kill_message_38,{target_name} waited in the quiet street in daylight. The town voted together. They killed {target_name} a {target_role}.
+town_kill_message_39,{target_name} stood by the town gate at noon. The town shouted names. They killed {target_name} a {target_role}.
+town_kill_message_40,{target_name} faced the crowd in the village meadow. The town raised voices. They killed {target_name} a {target_role}.

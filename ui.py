@@ -8,7 +8,12 @@ SUN_ART = """ ☀️ """
 # Print functions for the game setup phase of the game
 
 def welcome_message():
-    print("Hello! Let's play some mafia!")
+    greeting_messages = csv_handler.load_greeting_messages()
+    keys_list = list(greeting_messages.keys())
+    random_key = random.choice(keys_list)
+    message = greeting_messages[random_key]
+    print(f"{message}")
+
 
 def print_players_roles(players):
     print(f"Players Roles:")
@@ -45,7 +50,7 @@ def print_players_alive(players_alive):
         print(f"{player.name}")
 
 def mafia_kill_message(target):
-    mafia_kill_messages = csv_handler.load_maffia_kill_messages()
+    mafia_kill_messages = csv_handler.load_mafia_kill_messages()
     keys_list = list(mafia_kill_messages.keys())
     random_key = random.choice(keys_list)
     message = mafia_kill_messages[random_key]
@@ -56,7 +61,7 @@ def town_kill_message(day_killed):
     keys_list = list(town_kill_messages.keys())
     random_key = random.choice(keys_list)
     message = town_kill_messages[random_key]
-    print(f"{message.format(target_name = day_killed.name)}")
+    print(f"{message.format(target_name = day_killed.name, target_role = day_killed.role.value)}")
 
 def print_discussion(accused_players, count, game_phase):
     print(f"{game_phase.capitalize()} {count} Discussion")
@@ -66,7 +71,7 @@ def print_discussion(accused_players, count, game_phase):
     for player in accused_players:
         random_key = random.choice(keys_list)
         message = discussion_messages[random_key]
-        print(f"{message.format(accuser_name = player[0], accused_name = player[1])}")
+        print(f"{message.format(accuser_name = player[0], accused_name = player[1].capitalize())}")
 
 # Input Error Messages
 
