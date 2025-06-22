@@ -1,0 +1,41 @@
+key,text
+mafia_kill_message_1,{target_name} ran through the dark woods at night. The Mafia chased them. They killed {target_name} before dawn.
+mafia_kill_message_2,{target_name} hid in the quiet town square. Shadows found them fast. The Mafia killed {target_name} there.
+mafia_kill_message_3,{target_name} crept by the old barn in the dark. The Mafia saw them. They killed {target_name} silently.
+mafia_kill_message_4,{target_name} walked by the foggy river alone. Dark figures jumped out. The Mafia killed {target_name} quickly.
+mafia_kill_message_5,{target_name} sneaked down a shadowy alley. The Mafia was waiting. They killed {target_name} in the dark.
+mafia_kill_message_6,{target_name} stayed in their small house at night. The Mafia broke in. They killed {target_name} quietly.
+mafia_kill_message_7,{target_name} stared at the starry sky outside. Dark shapes came near. The Mafia killed {target_name} that night.
+mafia_kill_message_8,{target_name} stood on the empty road alone. The Mafia moved close. They killed {target_name} before morning.
+mafia_kill_message_9,{target_name} wandered in the misty forest at night. Quiet steps followed. The Mafia killed {target_name} there.
+mafia_kill_message_10,{target_name} sat by the town well in the dark. Shadows crept up. The Mafia killed {target_name} silently.
+mafia_kill_message_11,{target_name} walked in the quiet night alone. The Mafia struck fast. They killed {target_name} in the shadows.
+mafia_kill_message_12,{target_name} hid near the old church at night. Dark figures found them. The Mafia killed {target_name} quietly.
+mafia_kill_message_13,{target_name} ran down a silent street in the dark. The Mafia caught them. They killed {target_name} at dawn.
+mafia_kill_message_14,{target_name} stood in a moonlit field alone. Shadows closed in. The Mafia killed {target_name} that night.
+mafia_kill_message_15,{target_name} hid by the spooky mill in the dark. The Mafia saw them. They killed {target_name} fast.
+mafia_kill_message_16,{target_name} waited in a dark yard at night. Quiet steps came near. The Mafia killed {target_name} there.
+mafia_kill_message_17,{target_name} crossed a quiet bridge in the fog. The Mafia was waiting. They killed {target_name} silently.
+mafia_kill_message_18,{target_name} sat in the town park at night. Shadows moved quickly. The Mafia killed {target_name} in the dark.
+mafia_kill_message_19,{target_name} stood by an old tree in the dark. The Mafia struck. They killed {target_name} quietly.
+mafia_kill_message_20,{target_name} walked a village path at night. Dark figures followed. The Mafia killed {target_name} there.
+mafia_kill_message_21,{target_name} hid in an empty shop in the dark. The Mafia broke in. They killed {target_name} fast.
+mafia_kill_message_22,{target_name} looked at the cloudy sky outside. The Mafia came close. They killed {target_name} that night.
+mafia_kill_message_23,{target_name} stood by the town gate in the dark. Shadows struck fast. The Mafia killed {target_name} silently.
+mafia_kill_message_24,{target_name} ran through silent woods at night. The Mafia caught up. They killed {target_name} before dawn.
+mafia_kill_message_25,{target_name} hid by a rusty gate in the dark. Dark shapes found them. The Mafia killed {target_name} there.
+mafia_kill_message_26,{target_name} sat in a quiet meadow at night. The Mafia moved in. They killed {target_name} quietly.
+mafia_kill_message_27,{target_name} walked in the foggy square at night. Shadows struck fast. The Mafia killed {target_name} at sunrise.
+mafia_kill_message_28,{target_name} stood by a dark pond in the dark. The Mafia came near. They killed {target_name} silently.
+mafia_kill_message_29,{target_name} crept down a shadowy lane at night. Quiet steps followed. The Mafia killed {target_name} there.
+mafia_kill_message_30,{target_name} hid near an old tower in the dark. The Mafia found them. They killed {target_name} fast.
+mafia_kill_message_31,{target_name} walked by the riverbank at night. Dark figures struck. The Mafia killed {target_name} in the dark.
+mafia_kill_message_32,{target_name} sneaked into the town hall at night. The Mafia was waiting. They killed {target_name} quietly.
+mafia_kill_message_33,{target_name} hid in an empty barn in the dark. The Mafia opened the door. They killed {target_name} there.
+mafia_kill_message_34,{target_name} stood in a spooky graveyard at night. Shadows moved fast. The Mafia killed {target_name} silently.
+mafia_kill_message_35,{target_name} walked by a dark fence at night. The Mafia struck. They killed {target_name} in the dark.
+mafia_kill_message_36,{target_name} sat by an old well at night. Dark shapes came close. The Mafia killed {target_name} quietly.
+mafia_kill_message_37,{target_name} stood in a misty field at night. The Mafia moved in. They killed {target_name} fast.
+mafia_kill_message_38,{target_name} ran down a quiet street at night. Shadows caught them. The Mafia killed {target_name} at dawn.
+mafia_kill_message_39,{target_name} crossed a creaky bridge at night. The Mafia was there. They killed {target_name} silently.
+mafia_kill_message_40,{target_name} hid in a shadowy park at night. Dark figures struck. The Mafia killed {target_name} there.

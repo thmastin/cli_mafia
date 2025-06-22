@@ -30,3 +30,13 @@ def load_discussion_messaages():
             discussion_messages[line[0]] = line[1]
     return discussion_messages
 
+def load_maffia_kill_messages():
+    with open("data/mafia_kill_messages.csv") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)
+        mafia_kill_messages = {}
+        for line in csv_reader:
+            mafia_kill_messages[line[0]] = line[1]
+    return mafia_kill_messages
+
+
