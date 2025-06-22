@@ -30,5 +30,15 @@ def player_vote_town():
         ui.invalid_vote_error()
         return player_vote_town()
     return player_vote[1]
+
+def player_count():
+    while True:
+        try:
+            player_number = int(ui.prompt_player_number())
+            break
+        except:
+            ui.invalid_player_number()
+    return player_number
+
     
         

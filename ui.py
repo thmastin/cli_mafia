@@ -90,6 +90,9 @@ def invalid_vote_error():
 def empty_player_name():
     print("ERROR: You must enter a name.")
 
+def invalid_player_number():
+    print("You must enber a integer.")
+
 def town_voting_header():
     print("--------------------------------------")
     print('The town begins voting...')
@@ -136,6 +139,10 @@ def prompt_player_vote():
 
 def prompt_payer_name():
     print("Enter your name and press <Enter>:")
+    return input().strip()
+
+def prompt_player_number():
+    print("Enter the number of players for the game and press <Enter>")
     return input().strip()
 
 def player_name():

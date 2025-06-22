@@ -2,15 +2,17 @@ import random
 import ui
 
 from player import Role, Player, PlayerType
-from player_input import pause_game
+from player_input import pause_game, player_count
 from csv_handler import load_player_names
 
 
 def game_setup():
-    number_of_players = 8
-  
     # Welcome the player to the game
     ui.welcome_message()
+
+    # Get the number of players for the game
+    number_of_players = player_count()
+
 
     # Determine the number of mafia (1/4 of players minimum 1)
     num_mafia = max(1, number_of_players // 4)
