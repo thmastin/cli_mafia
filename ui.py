@@ -52,7 +52,11 @@ def mafia_kill_message(target):
     print(f"{message.format(target_name = target.name)}")
 
 def town_kill_message(day_killed):
-    print(f"{day_killed.name} was killed, they were {day_killed.role.value}")
+    town_kill_messages = csv_handler.load_town_kill_messages()
+    keys_list = list(town_kill_messages.keys())
+    random_key = random.choice(keys_list)
+    message = town_kill_messages[random_key]
+    print(f"{message.format(target_name = day_killed.name)}")
 
 def print_discussion(accused_players, count, game_phase):
     print(f"{game_phase.capitalize()} {count} Discussion")

@@ -39,4 +39,14 @@ def load_maffia_kill_messages():
             mafia_kill_messages[line[0]] = line[1]
     return mafia_kill_messages
 
+def load_town_kill_messages():
+    with open("data/town_kill_messages.csv") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)
+        town_kill_messages = {}
+        for line in csv_reader:
+            town_kill_messages[line[0]] = line[1]
+    return town_kill_messages
+
+
 
