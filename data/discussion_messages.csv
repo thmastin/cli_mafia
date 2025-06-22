@@ -1,0 +1,41 @@
+key,text
+discussion_message_1,{accuser_name} accuses {accused_name} of being Mafia!
+discussion_message_2,{accuser_name} points a finger at {accused_name} as the killer!
+discussion_message_3,{accuser_name} suspects {accused_name} of foul play!
+discussion_message_4,{accuser_name} claims {accused_name} is behind the murders!
+discussion_message_5,{accuser_name} calls out {accused_name} as a traitor!
+discussion_message_6,{accuser_name} blames {accused_name} for the town’s woes!
+discussion_message_7,{accuser_name} denounces {accused_name} as a criminal!
+discussion_message_8,{accuser_name} labels {accused_name} a Mafia member!
+discussion_message_9,{accuser_name} charges {accused_name} with treachery!
+discussion_message_10,{accuser_name} insists {accused_name} is the enemy!
+discussion_message_11,{accuser_name} accuses {accused_name} of dark deeds!
+discussion_message_12,{accuser_name} points to {accused_name} as the culprit!
+discussion_message_13,{accuser_name} suspects {accused_name} is hiding secrets!
+discussion_message_14,{accuser_name} calls {accused_name} a murderer!
+discussion_message_15,{accuser_name} brands {accused_name} as the villain!
+discussion_message_16,{accuser_name} claims {accused_name} betrays the town!
+discussion_message_17,{accuser_name} accuses {accused_name} of being a liar!
+discussion_message_18,{accuser_name} fingers {accused_name} as the Mafia!
+discussion_message_19,{accuser_name} declares {accused_name} guilty!
+discussion_message_20,{accuser_name} outs {accused_name} as a killer!
+discussion_message_21,{accuser_name} suspects {accused_name} of evil intent!
+discussion_message_22,{accuser_name} accuses {accused_name} of plotting murder!
+discussion_message_23,{accuser_name} blames {accused_name} for the bloodshed!
+discussion_message_24,{accuser_name} calls out {accused_name}’s treachery!
+discussion_message_25,{accuser_name} points at {accused_name} with suspicion!
+discussion_message_26,{accuser_name} charges {accused_name} as the mastermind!
+discussion_message_27,{accuser_name} denounces {accused_name}’s loyalty!
+discussion_message_28,{accuser_name} labels {accused_name} a deceiver!
+discussion_message_29,{accuser_name} accuses {accused_name} of sinister acts!
+discussion_message_30,{accuser_name} claims {accused_name} is the true threat!
+discussion_message_31,{accuser_name} suspects {accused_name} of being corrupt!
+discussion_message_32,{accuser_name} calls {accused_name} a Mafia puppet!
+discussion_message_33,{accuser_name} blames {accused_name} for the chaos!
+discussion_message_34,{accuser_name} accuses {accused_name} of secret crimes!
+discussion_message_35,{accuser_name} points to {accused_name} as a betrayer!
+discussion_message_36,{accuser_name} declares {accused_name} a danger!
+discussion_message_37,{accuser_name} charges {accused_name} with deception!
+discussion_message_38,{accuser_name} outs {accused_name} as the fiend!
+discussion_message_39,{accuser_name} suspects {accused_name} of vile schemes!
+discussion_message_40,{accuser_name} accuses {accused_name} of leading the Mafia!

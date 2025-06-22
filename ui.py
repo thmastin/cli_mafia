@@ -53,8 +53,12 @@ def town_kill_message(day_killed):
 def print_discussion(accused_players, count, game_phase):
     print(f"{game_phase.capitalize()} {count} Discussion")
     print("--------------------------------------")
+    discussion_messages = csv_handler.load_discussion_messaages()
+    keys_list = list(discussion_messages.keys())
     for player in accused_players:
-        print(f"{player[0]} accuses {player[1].capitalize()}")
+        random_key = random.choice(keys_list)
+        message = discussion_messages[random_key]
+        print(f"{message.format(accuser_name = player[0], accused_name = player[1])}")
 
 # Input Error Messages
 

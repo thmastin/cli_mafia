@@ -21,3 +21,12 @@ def load_vote_messages():
             vote_messages[line[0]] = line[1]
     return vote_messages
 
+def load_discussion_messaages():
+    with open("data/discussion_messages.csv") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)
+        discussion_messages = {}
+        for line in csv_reader:
+            discussion_messages[line[0]] = line[1]
+    return discussion_messages
+
